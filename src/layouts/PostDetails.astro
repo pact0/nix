@@ -8,6 +8,7 @@ import type { CollectionEntry } from "astro:content";
 import { slugifyStr } from "@utils/slugify";
 import ShareLinks from "@components/ShareLinks.astro";
 import { SITE } from "@config";
+import Comments from "@components/Comments";
 
 export interface Props {
   post: CollectionEntry<"blog">;
@@ -26,6 +27,7 @@ const {
   modDatetime,
   tags,
   editPost,
+  readingTime,
 } = post.data;
 
 const { Content } = await post.render();
@@ -80,6 +82,9 @@ const nextPost =
     <h1 transition:name={slugifyStr(title)} class="post-title inline-block">
       {title}
     </h1>
+    <span class="text-sm text-skin-accent/85">
+      {readingTime}
+    </span>
     <Datetime
       pubDatetime={pubDatetime}
       modDatetime={modDatetime}
@@ -175,6 +180,8 @@ const nextPost =
         )
       }
     </div>
+
+        <Comments client:only="react" />
   </main>
   <Footer />
 </Layout>

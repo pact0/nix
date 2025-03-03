@@ -1,12 +1,26 @@
 import type { Site, SocialObjects } from "./types";
+import type { GiscusProps } from "@giscus/react";
+
+export const GISCUS: GiscusProps = {
+  repo: "pact0/blog",
+  repoId: "[ENTER REPO ID HERE]",
+  category: "[ENTER CATEGORY NAME HERE]",
+  categoryId: "[ENTER CATEGORY ID HERE]",
+  mapping: "pathname",
+  reactionsEnabled: "0",
+  emitMetadata: "0",
+  inputPosition: "bottom",
+  lang: "en",
+  loading: "lazy",
+};
 
 export const SITE: Site = {
   website: "https://astro-paper.pages.dev/", // replace this with your deployed domain
-  author: "Sat Naing",
+  author: "pacto",
   profile: "https://satnaing.dev/",
   desc: "A minimal, responsive and SEO-friendly Astro blog theme.",
-  title: "AstroPaper",
-  ogImage: "astropaper-og.jpg",
+  title: "The Crucible",
+  ogImage: "Shaper.png",
   lightAndDarkMode: true,
   postPerIndex: 4,
   postPerPage: 3,
@@ -26,7 +40,7 @@ export const LOCALE = {
 
 export const LOGO_IMAGE = {
   enable: false,
-  svg: true,
+  svg: false,
   width: 216,
   height: 46,
 };

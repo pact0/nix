@@ -1,3 +1,4 @@
+import { remarkReadingTime } from "./src/utils/remark-reading-time.mjs"; // make sure your relative path is correct
 import { defineConfig } from "astro/config";
 import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
@@ -21,6 +22,7 @@ export default defineConfig({
   markdown: {
     remarkPlugins: [
       remarkToc,
+      remarkReadingTime,
       [
         remarkCollapse,
         {

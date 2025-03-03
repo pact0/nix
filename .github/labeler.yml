@@ -1,0 +1,12 @@
+parts:
+  - changed-files:
+      - any-glob-to-any-file: parts/**/*
+docs:
+  - changed-files:
+      - any-glob-to-any-file: docs/*
+treewide:
+  - changed-files:
+      - any-glob-to-any-file: "*"
+CI:
+  - changed-files:
+      - any-glob-to-any-file: .github/workflows/*
