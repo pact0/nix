@@ -18,13 +18,8 @@ build_time := `date -u '+%Y-%m-%d_%H:%M:%S'`
 build_by := `whoami`
 
 [group('dev')]
-dev browser="chrome":
-    pnpm dev -b={{browser}}
-
-
-[group('release')]
-zip browser="chrome":
-    pnpm zip -b={{browser}}
+dev :
+    pnpm dev
 
 [group('bump')]
 bump package="":

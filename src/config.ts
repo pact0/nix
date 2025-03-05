@@ -14,8 +14,9 @@ export const GISCUS: GiscusProps = {
   loading: "lazy",
 };
 
+
 export const SITE: Site = {
-  website: "https://astro-paper.pages.dev/", // replace this with your deployed domain
+  website: `"https://nix.pacto.live"`, // replace this with your deployed domain
   author: "pacto",
   profile: "https://satnaing.dev/",
   desc: "A minimal, responsive and SEO-friendly Astro blog theme.",
