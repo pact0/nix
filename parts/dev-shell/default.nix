@@ -13,6 +13,9 @@
       # Set up pre-commit hooks when user enters the shell.
       shellHook = ''
         ${config.pre-commit.installationScript}
+
+        export PLAYWRIGHT_BROWSERS_PATH=${pkgs.playwright-driver.browsers}
+        export PLAYWRIGHT_SKIP_VALIDATE_HOST_REQUIREMENTS=true
       '';
 
       # Tell Direnv to shut up.
@@ -30,6 +33,8 @@
         # node
         pkgs.pnpm
         pkgs.nodejs_22
+        pkgs.playwright
+        pkgs.playwright-driver.browsers
       ];
     };
   };

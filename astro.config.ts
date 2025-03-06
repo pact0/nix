@@ -4,13 +4,13 @@ import tailwind from "@astrojs/tailwind";
 import react from "@astrojs/react";
 import remarkToc from "remark-toc";
 import remarkCollapse from "remark-collapse";
+import remarkMermaid from "remark-mermaidjs";
 import sitemap from "@astrojs/sitemap";
 import { SITE } from "./src/config";
 
 // https://astro.build/config
 export default defineConfig({
   site: SITE.website,
-  base: SITE.base,
   integrations: [
     tailwind({
       applyBaseStyles: false,
@@ -24,6 +24,10 @@ export default defineConfig({
     remarkPlugins: [
       remarkToc,
       remarkReadingTime,
+      remarkMermaid,
+
+      [remarkMermaid, { themeVariables: { scale: 10 } }],
+
       [
         remarkCollapse,
         {
