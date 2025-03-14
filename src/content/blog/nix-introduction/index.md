@@ -1,7 +1,7 @@
 ---
 title: Nix Introduction
 author: pact0
-pubDatetime: 2022-03-25T16:55:12.000+00:00
+pubDatetime: 2025-03-14T12:55:12.000+00:00
 slug: nix-introduction
 featured: false
 draft: false
@@ -534,6 +534,7 @@ watch_file flake.nix
     };
   };
 ```
+
 ```nix
 # Make `nix-shell` consistent with `nix develop`
 (builtins.getFlake ("git+file://" + toString ./.)).devShells.${builtins.currentSystem}.default
